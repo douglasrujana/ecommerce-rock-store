@@ -1,0 +1,38 @@
+{
+  "productos_esperados": {
+    "total_minimo": 40,
+    "categorias": [
+      "Rock Clásico", "Grunge", "Punk", "New Wave", "Britpop", 
+      "Jazz", "Rock Nacional", "Indie Rock", "Blues", "Metal"
+    ],
+    "decadas": [
+      "1920s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s"
+    ]
+  },
+  
+  "busquedas_test": [
+    {
+      "termino": "Pink Floyd",
+      "resultados_esperados": ["Dark Side", "The Wall"]
+    },
+    {
+      "termino": "Nirvana", 
+      "resultados_esperados": ["Nevermind"]
+    },
+    {
+      "termino": "XYZ123NoExiste",
+      "resultados_esperados": []
+    }
+  ],
+
+  "dark_side_moon": {
+    "codigo": "PF001",
+    "elementos_ficha": [
+      "Historia del Álbum",
+      "Proceso de Grabación", 
+      "Impacto Cultural",
+      "Canciones y Acordes"
+    ],
+    "canciones": ["Speak to Me", "Breathe", "Time", "Money"]
+  }
+}

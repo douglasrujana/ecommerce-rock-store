@@ -1,0 +1,71 @@
+/* 
+🎨 JONY IVE COLOR PHILOSOPHY
+"Color should be purposeful, not decorative. Every hue must serve the user's understanding."
+
+Principios aplicados:
+- Paleta neutral como base (90% del diseño)
+- Color funcional solo cuando comunica estado o acción
+- Transparencias para crear profundidad sin peso visual
+- Gradientes sutiles que imitan la luz natural
+*/
+
+:root {
+  /* === NEUTRALES APPLE === */
+  /* Filosofía: "El gris perfecto no existe, pero podemos acercarnos" */
+  --ive-white: #FFFFFF;
+  --ive-gray-50: #F2F2F7;    /* Fondo principal - casi imperceptible */
+  --ive-gray-100: #E5E5EA;   /* Divisores sutiles */
+  --ive-gray-200: #D1D1D6;   /* Bordes activos */
+  --ive-gray-300: #C7C7CC;   /* Texto secundario */
+  --ive-gray-400: #AEAEB2;   /* Iconos inactivos */
+  --ive-gray-500: #8E8E93;   /* Texto terciario */
+  --ive-gray-600: #636366;   /* Texto secundario oscuro */
+  --ive-gray-700: #48484A;   /* Texto principal */
+  --ive-gray-800: #3A3A3C;   /* Elementos prominentes */
+  --ive-gray-900: #1C1C1E;   /* Negro Apple - máximo contraste */
+  --ive-black: #000000;
+
+  /* === COLORES FUNCIONALES === */
+  /* Filosofía: "El color debe guiar, no gritar" */
+  --ive-blue: #007AFF;        /* Acción primaria - azul Apple icónico */
+  --ive-blue-light: #5AC8FA;  /* Estados hover/activos */
+  --ive-blue-dark: #0056CC;   /* Estados pressed */
+  
+  --ive-green: #34C759;       /* Éxito/confirmación */
+  --ive-orange: #FF9500;      /* Advertencia */
+  --ive-red: #FF3B30;         /* Error/destructivo */
+  --ive-purple: #AF52DE;      /* Creatividad/premium */
+  --ive-pink: #FF2D92;        /* Favoritos/destacados */
+
+  /* === TRANSPARENCIAS CONTEXTUALES === */
+  /* Filosofía: "La transparencia crea jerarquía sin añadir peso" */
+  --ive-overlay-light: rgba(255, 255, 255, 0.8);
+  --ive-overlay-dark: rgba(0, 0, 0, 0.4);
+  --ive-glass-light: rgba(255, 255, 255, 0.1);
+  --ive-glass-dark: rgba(0, 0, 0, 0.1);
+  
+  /* === GRADIENTES NATURALES === */
+  /* Filosofía: "Los gradientes deben imitar cómo la luz toca los objetos" */
+  --ive-gradient-blue: linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%);
+  --ive-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  --ive-gradient-shadow: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%);
+}
+
+/* === MODO OSCURO === */
+/* Filosofía: "El modo oscuro no es invertir colores, es repensar la luz" */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ive-white: #000000;
+    --ive-gray-50: #1C1C1E;
+    --ive-gray-100: #2C2C2E;
+    --ive-gray-200: #3A3A3C;
+    --ive-gray-300: #48484A;
+    --ive-gray-400: #636366;
+    --ive-gray-500: #8E8E93;
+    --ive-gray-600: #AEAEB2;
+    --ive-gray-700: #C7C7CC;
+    --ive-gray-800: #D1D1D6;
+    --ive-gray-900: #F2F2F7;
+    --ive-black: #FFFFFF;
+  }
+}

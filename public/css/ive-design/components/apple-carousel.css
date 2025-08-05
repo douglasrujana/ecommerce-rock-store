@@ -1,0 +1,292 @@
+/* 
+🎠 APPLE STORE CAROUSEL
+"Los productos deben fluir como una galería elegante"
+
+Principios aplicados:
+- Scroll horizontal suave y natural
+- Controles discretos pero accesibles
+- Hover states que revelan acciones
+- Responsive con indicadores móviles
+- Transiciones que imitan momentum físico
+*/
+
+/* === CAROUSEL CONTAINER === */
+.related-products-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 -8px; /* Compensar padding de items */
+}
+
+/* === CAROUSEL TRACK === */
+.related-products-track {
+  display: flex;
+  gap: var(--ive-space-4);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: var(--ive-space-2) var(--ive-space-2);
+  
+  /* Scroll horizontal en móvil */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.related-products-track::-webkit-scrollbar {
+  display: none;
+}
+
+.related-products-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* === PRODUCT ITEMS === */
+.related-product-item {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.related-product-item:hover {
+  transform: translateY(-4px);
+}
+
+/* === CARD ENHANCEMENTS === */
+.card-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-image-container img {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.related-product-item:hover .card-image-container img {
+  transform: scale(1.05);
+}
+
+/* === CARD OVERLAY === */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.related-product-item:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay .btn {
+  transform: translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.related-product-item:hover .card-overlay .btn {
+  transform: translateY(0);
+}
+
+/* === CARD CONTENT === */
+.card-title {
+  font-size: var(--ive-text-sm);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-gray-800);
+  line-height: var(--ive-leading-tight);
+}
+
+.card-price {
+  font-size: var(--ive-text-lg);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-blue);
+  margin: 0;
+}
+
+/* === CAROUSEL CONTROLS === */
+.carousel-controls {
+  gap: var(--ive-space-2);
+}
+
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ive-gray-300);
+  background: var(--ive-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ive-gray-600);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+  background: var(--ive-gray-50);
+  border-color: var(--ive-gray-400);
+  color: var(--ive-gray-800);
+  transform: scale(1.05);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-btn i {
+  font-size: 14px;
+}
+
+/* === SCROLL INDICATORS === */
+.scroll-indicators {
+  margin-top: var(--ive-space-4);
+}
+
+.scroll-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ive-gray-300);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.scroll-indicator.active {
+  background: var(--ive-blue);
+  transform: scale(1.2);
+}
+
+/* === QUICK ADD FUNCTIONALITY === */
+.btn[data-action="quick-add"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn[data-action="quick-add"].loading {
+  pointer-events: none;
+}
+
+.btn[data-action="quick-add"].loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn[data-action="quick-add"].success {
+  background: var(--ive-green) !important;
+  border-color: var(--ive-green) !important;
+  color: var(--ive-white) !important;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+  .related-product-item {
+    flex: 0 0 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .related-products-carousel {
+    margin: 0 -16px;
+  }
+  
+  .related-products-track {
+    padding: var(--ive-space-2) var(--ive-space-4);
+    gap: var(--ive-space-3);
+  }
+  
+  .related-product-item {
+    flex: 0 0 240px;
+  }
+  
+  /* En móvil, mostrar overlay siempre */
+  .card-overlay {
+    opacity: 0.9;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  }
+  
+  .card-overlay .btn {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .related-product-item {
+    flex: 0 0 200px;
+  }
+  
+  .card-body {
+    padding: var(--ive-space-3) !important;
+  }
+  
+  .card-title {
+    font-size: var(--ive-text-xs);
+  }
+  
+  .card-price {
+    font-size: var(--ive-text-base);
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .related-products-track {
+    transition: none;
+  }
+  
+  .related-product-item,
+  .card-image-container img,
+  .card-overlay,
+  .carousel-btn {
+    transition: none;
+  }
+}
+
+/* Focus states para navegación por teclado */
+.carousel-btn:focus,
+.btn[data-action="quick-add"]:focus,
+.btn[data-action="favorite"]:focus {
+  outline: 2px solid var(--ive-blue);
+  outline-offset: 2px;
+}
+
+/* === INTEGRATION WITH EXISTING CARDS === */
+.related-product-item .card {
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.related-product-item:hover .card {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}

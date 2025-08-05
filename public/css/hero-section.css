@@ -1,0 +1,132 @@
+/* 🎨 HERO SECTION - JONY IVE STYLE */
+
+.hero-gradient {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-image {
+    aspect-ratio: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-code {
+    font-size: 0.875rem;
+    color: rgba(44, 44, 44, 0.7);
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    color: #2c2c2c;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.hero-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.hero-badge-graphite {
+    background-color: rgba(44, 44, 44, 0.2);
+    color: #2c2c2c;
+}
+
+.hero-badge-sky {
+    background-color: rgba(0, 122, 255, 0.2);
+    color: #007aff;
+}
+
+.hero-price {
+    font-size: 1.875rem;
+    font-weight: 300;
+    color: #007aff;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: rgba(44, 44, 44, 0.8);
+    line-height: 1.6;
+}
+
+.hero-confidence {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.confidence-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(44, 44, 44, 0.7);
+}
+
+.confidence-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #30d158;
+}
+
+/* SVG Icons */
+.icon-shield {
+    fill: currentColor;
+}
+
+.icon-truck {
+    fill: currentColor;
+}
+
+.icon-refresh {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

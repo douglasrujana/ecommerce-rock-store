@@ -1,0 +1,313 @@
+@extends('web.app')
+@section('contenido')
+{{-- 🎭 HERO SECTION APPLE STYLE --}}
+<section class="product-hero">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            {{-- PORTADA DEL ÁLBUM --}}
+            <div class="col-md-6">
+                <div class="product-hero-image">
+                    <img class="img-fluid rounded-3"
+                        src="{{ $producto->imagen ? asset('uploads/productos/' . $producto->imagen) : 'https://dummyimage.com/600x700/2c2c2c/ffffff.jpg?text=🎸+ROCK+STORE' }}"
+                        alt="{{ $producto->nombre }}" />
+                </div>
+            </div>
+
+            {{-- INFORMACIÓN PRINCIPAL --}}
+            <div class="col-md-6 product-hero-content">
+                <div class="small mb-1 text-muted">Código: {{ $producto->codigo }}</div>
+                <h1 class="display-5 fw-bolder">{{ $producto->nombre }}</h1>
+
+                {{-- BADGES DE CATEGORIZACIÓN --}}
+                <div class="mb-3">
+                    @if($producto->categoria)
+                    <span class="badge me-1" style="background-color: {{ $producto->categoria->color }}">
+                        {{ $producto->categoria->nombre }}
+                    </span>
+                    @endif
+                    @if($producto->decada)
+                    <span class="badge bg-secondary me-1">{{ $producto->decada->nombre }}</span>
+                    @endif
+                    @if($producto->pais)
+                    <span class="badge bg-info me-1">{{ $producto->pais->bandera }} {{ $producto->pais->nombre }}</span>
+                    @endif
+                    @if($producto->año)
+                    <span class="badge bg-dark">{{ $producto->año }}</span>
+                    @endif
+                </div>
+
+                <div class="fs-4 mb-4">
+                    <span class="text-primary fw-bold">${{ number_format($producto->precio, 2) }}</span>
+                </div>
+
+                <p class="lead mb-4">{{ $producto->descripcion }}</p>
+                
+                {{-- CONFIDENCE INDICATORS --}}
+                <div class="confidence-indicators">
+                    <div class="confidence-item">
+                        <i class="bi-shield-check confidence-icon"></i>
+                        <span>Garantía incluida</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="bi-truck confidence-icon"></i>
+                        <span>Envío gratuito</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="bi-arrow-clockwise confidence-icon"></i>
+                        <span>Devolución fácil</span>
+                    </div>
+                </div>
+
+                {{-- INFORMACIÓN DE LA BANDA --}}
+                @if($producto->fichaMusical && $producto->fichaMusical->banda)
+                <div class="mb-4">
+                    <h5>🎸 {{ $producto->fichaMusical->banda->nombre }}</h5>
+                    <p class="text-muted small">{{ Str::limit($producto->fichaMusical->banda->biografia, 200) }}</p>
+                </div>
+                @endif
+
+                {{-- STICKY PURCHASE CONTROLS --}}
+                <div class="purchase-controls-sticky">
+                    <form action="{{ route('carrito.agregar') }}" method="POST" id="addToCartForm">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $producto->id }}">
+
+                        <div class="mb-4">
+                            <label class="form-label fw-medium mb-2">Cantidad</label>
+                            <div class="quantity-selector">
+                                <button type="button" class="quantity-btn" data-action="decrement">
+                                    <i class="bi-dash"></i>
+                                </button>
+                                <input class="quantity-input" 
+                                       id="cantidad"
+                                       name="cantidad"
+                                       type="number" 
+                                       min="1" 
+                                       max="99" 
+                                       value="1" />
+                                <button type="button" class="quantity-btn" data-action="increment">
+                                    <i class="bi-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary w-100 mb-3" type="submit" id="addToCartBtn">
+                            <i class="bi-cart-fill me-2"></i>
+                            <span class="btn-text">Agregar al carrito</span>
+                        </button>
+                        
+                        <button type="button" class="btn btn-outline-secondary w-100" data-product-id="{{ $producto->id }}" data-action="favorite">
+                            <i class="bi-heart me-2"></i> Agregar a favoritos
+                        </button>
+                    </form>
+                </div>
+
+                {{-- MENSAJE DE RESPUESTA --}}
+                <div id="cartMessage" class="alert d-none" role="alert"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- 🎭 SECCIÓN DE MUSEO: FICHA TÉCNICA --}}
+@if($producto->fichaMusical)
+<section class="py-5 bg-light info-section">
+    <div class="container px-4 px-lg-5">
+        <h2 class="fw-bolder mb-4">🎭 Ficha del Museo</h2>
+
+        <div class="row">
+            {{-- HISTORIA DEL ÁLBUM --}}
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 card-info">
+                    <div class="card-header">
+                        <h5 class="mb-0">📜 Historia del Álbum</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ $producto->fichaMusical->historia_album }}</p>
+                        @if($producto->fichaMusical->ventas_millones)
+                        <p><strong>Ventas:</strong> {{ $producto->fichaMusical->ventas_millones }} millones de copias</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+
+            {{-- PROCESO DE GRABACIÓN --}}
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 card-info">
+                    <div class="card-header">
+                        <h5 class="mb-0">🎧 Grabación</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ $producto->fichaMusical->proceso_grabacion }}</p>
+                        @if($producto->fichaMusical->productor)
+                        <p><strong>Productor:</strong> {{ $producto->fichaMusical->productor }}</p>
+                        @endif
+                        @if($producto->fichaMusical->estudio_grabacion)
+                        <p><strong>Estudio:</strong> {{ $producto->fichaMusical->estudio_grabacion }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- IMPACTO CULTURAL --}}
+        @if($producto->fichaMusical->impacto_cultural)
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h5 class="mb-0">🌍 Impacto Cultural</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ $producto->fichaMusical->impacto_cultural }}</p>
+                        @if($producto->fichaMusical->curiosidades)
+                        <h6>🤔 Curiosidades:</h6>
+                        <p class="text-muted">{{ $producto->fichaMusical->curiosidades }}</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+    </div>
+</section>
+@endif
+
+{{-- 🎵 SECCIÓN DE CANCIONES Y ACORDES --}}
+@if($producto->cancions->count() > 0)
+<section class="py-5 info-section">
+    <div class="container px-4 px-lg-5">
+        <h2 class="fw-bolder mb-4">🎵 Canciones y Acordes</h2>
+
+        <div class="row">
+            @foreach($producto->cancions as $cancion)
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0">{{ $cancion->track_number }}. {{ $cancion->titulo }}</h6>
+                        <div>
+                            @if($cancion->duracion)
+                            <span class="badge bg-secondary">{{ $cancion->duracion }}</span>
+                            @endif
+                            @if($cancion->nivel_ingles)
+                            <span class="badge bg-info">{{ $cancion->nivel_ingles }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @if($cancion->analisis_musical)
+                        <div class="mb-3">
+                            <h6>🎸 Análisis Musical:</h6>
+                            <p class="small text-muted">{{ $cancion->analisis_musical }}</p>
+                        </div>
+                        @endif
+
+                        @if($cancion->letra_original)
+                        <div class="mb-3">
+                            <h6>🇬🇧 Letra Original:</h6>
+                            <p class="small">{{ Str::limit($cancion->letra_original, 100) }}</p>
+                        </div>
+                        @endif
+
+                        @if($cancion->letra_traducida)
+                        <div class="mb-3">
+                            <h6>🇪🇸 Traducción:</h6>
+                            <p class="small text-muted">{{ Str::limit($cancion->letra_traducida, 100) }}</p>
+                        </div>
+                        @endif
+
+                        @if($cancion->vocabulario_clave)
+                        <div>
+                            <h6>📚 Vocabulario Clave:</h6>
+                            @foreach($cancion->vocabulario_clave as $palabra)
+                            <span class="badge bg-light text-dark me-1">{{ $palabra }}</span>
+                            @endforeach
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+{{-- ÁLBUMES RELACIONADOS - APPLE STORE CAROUSEL --}}
+<section class="py-5 bg-light info-section">
+    <div class="container px-4 px-lg-5">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <h2 class="fw-bolder mb-0">Álbumes Relacionados</h2>
+            <div class="carousel-controls d-none d-md-flex">
+                <button class="carousel-btn carousel-btn-prev" data-action="prev">
+                    <i class="bi-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" data-action="next">
+                    <i class="bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="related-products-carousel">
+            <div class="related-products-track" id="relatedProductsTrack">
+                @if(isset($relacionados))
+                @foreach($relacionados as $relacionado)
+                <div class="related-product-item">
+                    <div class="card h-100 card-product interactive">
+                        <div class="card-image-container">
+                            <img class="card-img-top" src="{{ $relacionado->imagen ? asset('uploads/productos/' . $relacionado->imagen) : 'https://dummyimage.com/280x280/dee2e6/6c757d.jpg' }}" alt="{{ $relacionado->nombre }}" />
+                            <div class="card-overlay">
+                                <a href="{{ route('web.show', $relacionado->id) }}" class="btn btn-primary btn-sm">Ver detalles</a>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h6 class="card-title mb-2">{{ Str::limit($relacionado->nombre, 40) }}</h6>
+                            <p class="card-price mb-3">${{ number_format($relacionado->precio, 2) }}</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-primary btn-sm flex-fill" 
+                                        data-product-id="{{ $relacionado->id }}" 
+                                        data-action="quick-add">
+                                    <i class="bi-cart-plus me-1"></i>
+                                    Agregar
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm" 
+                                        data-product-id="{{ $relacionado->id }}" 
+                                        data-action="favorite">
+                                    <i class="bi-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @endif
+            </div>
+        </div>
+        
+        <!-- Mobile scroll indicators -->
+        <div class="scroll-indicators d-md-none mt-3">
+            <div class="d-flex justify-content-center gap-2" id="scrollIndicators">
+                <!-- Generado por JavaScript -->
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- 📱 CARRITO FLOTANTE JONY IVE STYLE --}}
+<div class="floating-cart">
+    <div class="floating-cart-button" data-action="toggle-cart">
+        <i class="bi-cart3 floating-cart-icon"></i>
+        <div class="floating-cart-badge empty" id="cartBadge">
+            0
+        </div>
+    </div>
+</div>
+
+{{-- Los módulos JavaScript se cargan desde app.js --}}
+@endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/modules/carrito/carrito.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modules/productos/productos.css') }}">
+<link rel="stylesheet" href="{{ asset('css/ive-design/components/apple-store-patterns.css') }}">
+@endpush

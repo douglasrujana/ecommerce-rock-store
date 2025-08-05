@@ -1,0 +1,159 @@
+/* 
+✍️ JONY IVE TYPOGRAPHY PHILOSOPHY
+"Typography is not about making letters beautiful. It's about making meaning clear."
+
+Principios aplicados:
+- San Francisco como base (sistema Apple)
+- Jerarquía clara sin ornamentación
+- Espaciado óptico perfecto
+- Legibilidad sobre decoración
+- Peso tipográfico como herramienta de jerarquía
+*/
+
+:root {
+  /* === FAMILIAS TIPOGRÁFICAS === */
+  /* Filosofía: "La tipografía del sistema es invisible hasta que la necesitas" */
+  --ive-font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --ive-font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* === ESCALA TIPOGRÁFICA === */
+  /* Filosofía: "Cada tamaño debe tener un propósito claro" */
+  --ive-text-xs: 0.75rem;     /* 12px - Metadatos, timestamps */
+  --ive-text-sm: 0.875rem;    /* 14px - Texto secundario */
+  --ive-text-base: 1rem;      /* 16px - Texto principal */
+  --ive-text-lg: 1.125rem;    /* 18px - Texto destacado */
+  --ive-text-xl: 1.25rem;     /* 20px - Subtítulos */
+  --ive-text-2xl: 1.5rem;     /* 24px - Títulos de sección */
+  --ive-text-3xl: 1.875rem;   /* 30px - Títulos principales */
+  --ive-text-4xl: 2.25rem;    /* 36px - Títulos heroicos */
+  --ive-text-5xl: 3rem;       /* 48px - Display grande */
+  --ive-text-6xl: 3.75rem;    /* 60px - Display monumental */
+
+  /* === PESOS TIPOGRÁFICOS === */
+  /* Filosofía: "El peso debe comunicar importancia, no llamar la atención" */
+  --ive-font-thin: 100;
+  --ive-font-light: 300;
+  --ive-font-normal: 400;
+  --ive-font-medium: 500;     /* Peso preferido para UI */
+  --ive-font-semibold: 600;   /* Para títulos importantes */
+  --ive-font-bold: 700;       /* Solo para énfasis extremo */
+  --ive-font-black: 900;
+
+  /* === ESPACIADO TIPOGRÁFICO === */
+  /* Filosofía: "El espacio entre letras debe ser invisible pero perfecto" */
+  --ive-letter-tighter: -0.025em;
+  --ive-letter-tight: -0.01em;
+  --ive-letter-normal: 0em;
+  --ive-letter-wide: 0.025em;
+  --ive-letter-wider: 0.05em;
+
+  /* === ALTURA DE LÍNEA === */
+  /* Filosofía: "La línea debe respirar sin flotar" */
+  --ive-leading-none: 1;
+  --ive-leading-tight: 1.25;
+  --ive-leading-snug: 1.375;
+  --ive-leading-normal: 1.5;
+  --ive-leading-relaxed: 1.625;
+  --ive-leading-loose: 2;
+}
+
+/* === ESTILOS BASE === */
+/* Filosofía: "La tipografía debe ser invisible hasta que sea necesaria" */
+
+body {
+  font-family: var(--ive-font-system);
+  font-size: var(--ive-text-base);
+  font-weight: var(--ive-font-normal);
+  line-height: var(--ive-leading-normal);
+  letter-spacing: var(--ive-letter-tight);
+  color: var(--ive-gray-700);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === JERARQUÍA DE TÍTULOS === */
+/* Filosofía: "Cada nivel debe ser claramente diferente pero armonioso" */
+
+h1, .ive-h1 {
+  font-size: var(--ive-text-4xl);
+  font-weight: var(--ive-font-semibold);
+  letter-spacing: var(--ive-letter-tighter);
+  line-height: var(--ive-leading-tight);
+  color: var(--ive-gray-900);
+  margin-bottom: var(--ive-space-6);
+}
+
+h2, .ive-h2 {
+  font-size: var(--ive-text-3xl);
+  font-weight: var(--ive-font-semibold);
+  letter-spacing: var(--ive-letter-tighter);
+  line-height: var(--ive-leading-tight);
+  color: var(--ive-gray-800);
+  margin-bottom: var(--ive-space-5);
+}
+
+h3, .ive-h3 {
+  font-size: var(--ive-text-2xl);
+  font-weight: var(--ive-font-medium);
+  letter-spacing: var(--ive-letter-tight);
+  line-height: var(--ive-leading-snug);
+  color: var(--ive-gray-800);
+  margin-bottom: var(--ive-space-4);
+}
+
+h4, .ive-h4 {
+  font-size: var(--ive-text-xl);
+  font-weight: var(--ive-font-medium);
+  letter-spacing: var(--ive-letter-tight);
+  line-height: var(--ive-leading-snug);
+  color: var(--ive-gray-700);
+  margin-bottom: var(--ive-space-3);
+}
+
+h5, .ive-h5 {
+  font-size: var(--ive-text-lg);
+  font-weight: var(--ive-font-medium);
+  letter-spacing: var(--ive-letter-normal);
+  line-height: var(--ive-leading-normal);
+  color: var(--ive-gray-700);
+  margin-bottom: var(--ive-space-3);
+}
+
+h6, .ive-h6 {
+  font-size: var(--ive-text-base);
+  font-weight: var(--ive-font-medium);
+  letter-spacing: var(--ive-letter-normal);
+  line-height: var(--ive-leading-normal);
+  color: var(--ive-gray-600);
+  margin-bottom: var(--ive-space-2);
+}
+
+/* === TEXTO CORPORAL === */
+/* Filosofía: "El texto debe ser cómodo de leer durante horas" */
+
+p, .ive-text {
+  font-size: var(--ive-text-base);
+  font-weight: var(--ive-font-normal);
+  line-height: var(--ive-leading-relaxed);
+  color: var(--ive-gray-600);
+  margin-bottom: var(--ive-space-4);
+}
+
+/* === UTILIDADES TIPOGRÁFICAS === */
+/* Filosofía: "Herramientas precisas para ajustes específicos" */
+
+.ive-text-xs { font-size: var(--ive-text-xs); }
+.ive-text-sm { font-size: var(--ive-text-sm); }
+.ive-text-base { font-size: var(--ive-text-base); }
+.ive-text-lg { font-size: var(--ive-text-lg); }
+.ive-text-xl { font-size: var(--ive-text-xl); }
+
+.ive-font-light { font-weight: var(--ive-font-light); }
+.ive-font-normal { font-weight: var(--ive-font-normal); }
+.ive-font-medium { font-weight: var(--ive-font-medium); }
+.ive-font-semibold { font-weight: var(--ive-font-semibold); }
+
+.ive-text-primary { color: var(--ive-gray-900); }
+.ive-text-secondary { color: var(--ive-gray-600); }
+.ive-text-muted { color: var(--ive-gray-500); }
+.ive-text-blue { color: var(--ive-blue); }

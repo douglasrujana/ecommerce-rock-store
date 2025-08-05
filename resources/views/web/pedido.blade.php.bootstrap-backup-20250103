@@ -1,0 +1,175 @@
+@extends('web.app')
+@section('contenido')
+{{-- 🛒 APPLE STORE CART EXPERIENCE --}}
+<div class="apple-nav-spacer"></div>
+
+{{-- CART HERO SECTION --}}
+<section class="cart-hero">
+    <div class="container px-4 px-lg-5">
+        <div class="row align-items-center py-5">
+            <div class="col-md-8">
+                <h1 class="display-6 fw-semibold mb-2">Tu Carrito</h1>
+                <p class="text-muted mb-0" id="cartSummaryText">
+                    {{ $total_items ?? 0 }} álbum{{ ($total_items ?? 0) != 1 ? 'es' : '' }} en tu colección
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <div class="cart-total-preview">
+                    <span class="text-muted small">Total</span>
+                    <div class="h4 mb-0 text-primary" id="cartTotalPreview">
+                        {{ $total_formateado ?? '$0.00' }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- MAIN CART CONTENT --}}
+<section class="cart-content">
+    <div class="container px-4 px-lg-5">
+        @if($carrito_vacio ?? true)
+            {{-- EMPTY CART STATE --}}
+            <div class="empty-cart-state">
+                <div class="empty-cart-icon">
+                    <i class="bi-bag"></i>
+                </div>
+                <h3 class="empty-cart-title">Tu carrito está vacío</h3>
+                <p class="empty-cart-subtitle">Cuando agregues álbumes, aparecerán aquí.</p>
+                <a href="{{ route('web.index') }}" class="btn btn-primary btn-lg">
+                    Explorar Álbumes
+                </a>
+            </div>
+        @else
+            <div class="row">
+                {{-- CART ITEMS --}}
+                <div class="col-lg-8">
+                    <div class="cart-items-container">
+                        <div class="cart-items-list" id="cartItems">
+                            @foreach($carrito as $id => $item)
+                            <div class="cart-item" data-product-id="{{ $id }}">
+                                <div class="cart-item-image">
+                                    <img src="{{ $item['imagen'] ? asset('uploads/productos/' . $item['imagen']) : 'https://dummyimage.com/120x120/dee2e6/6c757d.jpg' }}" 
+                                         alt="{{ $item['nombre'] }}">
+                                </div>
+                                
+                                <div class="cart-item-details">
+                                    <h6 class="cart-item-title">{{ $item['nombre'] }}</h6>
+                                    <div class="cart-item-meta">
+                                        @if(isset($item['categoria']))
+                                            <span class="badge bg-secondary me-1">{{ $item['categoria'] }}</span>
+                                        @endif
+                                        @if(isset($item['año']))
+                                            <span class="badge bg-dark">{{ $item['año'] }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="cart-item-price">
+                                        ${{ number_format($item['precio'], 2) }}
+                                    </div>
+                                </div>
+                                
+                                <div class="cart-item-controls">
+                                    <div class="quantity-selector">
+                                        <button type="button" class="quantity-btn" data-action="decrement" data-product-id="{{ $id }}">
+                                            <i class="bi-dash"></i>
+                                        </button>
+                                        <input class="quantity-input" 
+                                               type="number" 
+                                               value="{{ $item['cantidad'] }}" 
+                                               min="1" 
+                                               max="99"
+                                               data-product-id="{{ $id }}">
+                                        <button type="button" class="quantity-btn" data-action="increment" data-product-id="{{ $id }}">
+                                            <i class="bi-plus"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="cart-item-subtotal">
+                                        ${{ number_format($item['subtotal'] ?? ($item['precio'] * $item['cantidad']), 2) }}
+                                    </div>
+                                    
+                                    <button class="cart-item-remove" data-product-id="{{ $id }}">
+                                        <i class="bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        
+                        {{-- CART ACTIONS --}}
+                        <div class="cart-actions">
+                            <button class="btn btn-outline-secondary" id="clearCartBtn">
+                                <i class="bi-arrow-clockwise me-2"></i>
+                                Vaciar carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- ORDER SUMMARY --}}
+                <div class="col-lg-4">
+                    <div class="order-summary sticky-summary">
+                        <div class="order-summary-header">
+                            <h5>Resumen del pedido</h5>
+                        </div>
+                        
+                        <div class="order-summary-content">
+                            <div class="summary-line">
+                                <span>Subtotal</span>
+                                <span id="subtotalAmount">{{ $subtotal_formateado ?? '$0.00' }}</span>
+                            </div>
+                            
+                            <div class="summary-line">
+                                <span>Envío</span>
+                                <span class="text-success">Gratis</span>
+                            </div>
+                            
+                            <div class="summary-line">
+                                <span>Impuestos</span>
+                                <span id="taxAmount">{{ $impuestos_formateado ?? '$0.00' }}</span>
+                            </div>
+                            
+                            <div class="summary-divider"></div>
+                            
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span id="totalAmount">{{ $total_formateado ?? '$0.00' }}</span>
+                            </div>
+                            
+                            <button class="btn btn-primary w-100 checkout-btn" id="checkoutBtn">
+                                Continuar con el pago
+                            </button>
+                            
+                            <div class="checkout-info">
+                                <div class="checkout-info-item">
+                                    <i class="bi-shield-check"></i>
+                                    <span>Compra segura</span>
+                                </div>
+                                <div class="checkout-info-item">
+                                    <i class="bi-truck"></i>
+                                    <span>Envío gratuito</span>
+                                </div>
+                                <div class="checkout-info-item">
+                                    <i class="bi-arrow-clockwise"></i>
+                                    <span>Devoluciones fáciles</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    </div>
+</section>
+
+{{-- NOTIFICATIONS CONTAINER --}}
+<div id="cartNotifications" class="notifications-container"></div>
+@endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/ive-design/components/apple-cart.css') }}">
+@endpush
+
+@push('scripts')
+<script type="module" src="{{ asset('js/modules/carrito/apple-cart.js') }}"></script>
+@endpush

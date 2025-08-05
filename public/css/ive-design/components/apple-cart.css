@@ -1,0 +1,415 @@
+/* 
+🛒 APPLE STORE CART EXPERIENCE
+"El carrito debe sentirse como una extensión natural de la tienda"
+
+Principios aplicados:
+- Layout limpio sin elementos innecesarios
+- Controles intuitivos y accesibles
+- Feedback visual inmediato
+- Sticky summary que acompaña al usuario
+- Estados vacíos elegantes y motivadores
+*/
+
+/* === CART HERO === */
+.cart-hero {
+  background: linear-gradient(135deg, var(--ive-gray-50) 0%, var(--ive-white) 100%);
+  border-bottom: 1px solid var(--ive-gray-200);
+}
+
+.cart-total-preview {
+  text-align: right;
+}
+
+/* === EMPTY CART STATE === */
+.empty-cart-state {
+  text-align: center;
+  padding: var(--ive-space-20) var(--ive-space-8);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.empty-cart-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--ive-space-8);
+  background: var(--ive-gray-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ive-gray-400);
+  font-size: 3rem;
+}
+
+.empty-cart-title {
+  font-size: var(--ive-text-3xl);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-gray-800);
+  margin-bottom: var(--ive-space-4);
+}
+
+.empty-cart-subtitle {
+  font-size: var(--ive-text-lg);
+  color: var(--ive-gray-500);
+  margin-bottom: var(--ive-space-8);
+  line-height: var(--ive-leading-relaxed);
+}
+
+/* === CART ITEMS CONTAINER === */
+.cart-items-container {
+  background: var(--ive-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.cart-items-list {
+  padding: 0;
+}
+
+/* === CART ITEM === */
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: var(--ive-space-6);
+  border-bottom: 1px solid var(--ive-gray-100);
+  transition: background-color 0.2s ease;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item:hover {
+  background: var(--ive-gray-50);
+}
+
+/* === CART ITEM IMAGE === */
+.cart-item-image {
+  flex-shrink: 0;
+  margin-right: var(--ive-space-4);
+}
+
+.cart-item-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === CART ITEM DETAILS === */
+.cart-item-details {
+  flex: 1;
+  min-width: 0; /* Para permitir text truncation */
+}
+
+.cart-item-title {
+  font-size: var(--ive-text-base);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-gray-900);
+  margin-bottom: var(--ive-space-2);
+  line-height: var(--ive-leading-tight);
+}
+
+.cart-item-meta {
+  margin-bottom: var(--ive-space-2);
+}
+
+.cart-item-meta .badge {
+  font-size: var(--ive-text-xs);
+  padding: var(--ive-space-1) var(--ive-space-2);
+  border-radius: 6px;
+  background: var(--ive-gray-200) !important;
+  color: var(--ive-gray-700) !important;
+  border: none;
+}
+
+.cart-item-price {
+  font-size: var(--ive-text-sm);
+  color: var(--ive-gray-600);
+  font-weight: var(--ive-font-medium);
+}
+
+/* === CART ITEM CONTROLS === */
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--ive-space-4);
+  flex-shrink: 0;
+}
+
+.cart-item-subtotal {
+  font-size: var(--ive-text-lg);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-gray-900);
+  min-width: 80px;
+  text-align: right;
+}
+
+.cart-item-remove {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--ive-gray-100);
+  border-radius: 8px;
+  color: var(--ive-gray-500);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-remove:hover {
+  background: var(--ive-red);
+  color: var(--ive-white);
+  transform: scale(1.05);
+}
+
+/* === CART ACTIONS === */
+.cart-actions {
+  padding: var(--ive-space-6);
+  border-top: 1px solid var(--ive-gray-100);
+  background: var(--ive-gray-50);
+}
+
+/* === ORDER SUMMARY === */
+.order-summary {
+  background: var(--ive-white);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.sticky-summary {
+  position: sticky;
+  top: 100px; /* Ajustar según altura del nav */
+}
+
+.order-summary-header {
+  padding: var(--ive-space-6) var(--ive-space-6) var(--ive-space-4);
+  border-bottom: 1px solid var(--ive-gray-100);
+}
+
+.order-summary-header h5 {
+  margin: 0;
+  font-size: var(--ive-text-xl);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-gray-900);
+}
+
+.order-summary-content {
+  padding: var(--ive-space-6);
+}
+
+/* === SUMMARY LINES === */
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--ive-space-4);
+  font-size: var(--ive-text-base);
+}
+
+.summary-line:last-of-type {
+  margin-bottom: 0;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--ive-gray-200);
+  margin: var(--ive-space-5) 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--ive-text-xl);
+  font-weight: var(--ive-font-semibold);
+  color: var(--ive-gray-900);
+  margin-bottom: var(--ive-space-6);
+}
+
+/* === CHECKOUT BUTTON === */
+.checkout-btn {
+  font-size: var(--ive-text-lg);
+  font-weight: var(--ive-font-semibold);
+  padding: var(--ive-space-4) var(--ive-space-6);
+  border-radius: 12px;
+  margin-bottom: var(--ive-space-5);
+  transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+}
+
+/* === CHECKOUT INFO === */
+.checkout-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ive-space-3);
+}
+
+.checkout-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ive-space-2);
+  font-size: var(--ive-text-sm);
+  color: var(--ive-gray-600);
+}
+
+.checkout-info-item i {
+  color: var(--ive-green);
+  font-size: 1rem;
+}
+
+/* === NOTIFICATIONS === */
+.notifications-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1060;
+  max-width: 400px;
+}
+
+.cart-notification {
+  background: var(--ive-white);
+  border-radius: 12px;
+  padding: var(--ive-space-4);
+  margin-bottom: var(--ive-space-3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid var(--ive-blue);
+  animation: slideInRight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cart-notification.success {
+  border-left-color: var(--ive-green);
+}
+
+.cart-notification.error {
+  border-left-color: var(--ive-red);
+}
+
+.cart-notification.warning {
+  border-left-color: var(--ive-orange);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .sticky-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-hero .row {
+    text-align: center;
+  }
+  
+  .cart-total-preview {
+    text-align: center;
+    margin-top: var(--ive-space-4);
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ive-space-4);
+  }
+  
+  .cart-item-image {
+    margin-right: 0;
+    align-self: center;
+  }
+  
+  .cart-item-details {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .cart-item-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .cart-item-subtotal {
+    text-align: left;
+  }
+  
+  .empty-cart-state {
+    padding: var(--ive-space-12) var(--ive-space-4);
+  }
+  
+  .empty-cart-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item {
+    padding: var(--ive-space-4);
+  }
+  
+  .order-summary-content,
+  .order-summary-header {
+    padding: var(--ive-space-4);
+  }
+  
+  .cart-actions {
+    padding: var(--ive-space-4);
+  }
+}
+
+/* === LOADING STATES === */
+.cart-item.updating {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cart-item.removing {
+  animation: slideOutRight 0.3s ease-in-out forwards;
+}
+
+@keyframes slideOutRight {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .cart-item,
+  .checkout-btn,
+  .cart-notification {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Focus states */
+.cart-item-remove:focus,
+.checkout-btn:focus {
+  outline: 2px solid var(--ive-blue);
+  outline-offset: 2px;
+}

@@ -1,0 +1,341 @@
+/* 
+🎨 SUSAN KARE ICONOGRAPHY SYSTEM
+"Los iconos deben contar historias, no solo decorar interfaces"
+
+Principios aplicados:
+- Iconos que comunican función instantáneamente
+- Metáforas visuales familiares del mundo real
+- Consistencia en estilo pixel-perfect
+- Personalidad sin sacrificar claridad
+- Accesibilidad universal
+*/
+
+/* === ICON SYSTEM BASE === */
+/* Filosofía: "Un buen icono es como una buena palabra: dice mucho con poco" */
+.kare-icon {
+  /* Tamaño base optimizado para legibilidad */
+  width: 24px;
+  height: 24px;
+  
+  /* Alineación pixel-perfect */
+  display: inline-block;
+  vertical-align: middle;
+  
+  /* Transición sutil para feedback */
+  transition: transform 0.15s ease;
+  
+  /* Anti-aliasing optimizado */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === MUSICAL METAPHORS === */
+/* Filosofía: "Los iconos musicales deben evocar el sonido visualmente" */
+
+/* Icono de álbum - Disco de vinilo */
+.kare-icon-album {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle at center, 
+    var(--ive-gray-900) 0%, 
+    var(--ive-gray-900) 25%, 
+    var(--ive-gray-700) 26%, 
+    var(--ive-gray-700) 45%, 
+    var(--ive-gray-900) 46%, 
+    var(--ive-gray-900) 100%);
+  border-radius: 50%;
+  border: 2px solid var(--ive-gray-800);
+}
+
+.kare-icon-album::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--ive-gray-400);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Icono de nota musical - Estilo pixel art */
+.kare-icon-note {
+  position: relative;
+  width: 20px;
+  height: 24px;
+}
+
+.kare-icon-note::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 6px;
+  background: var(--ive-gray-900);
+  border-radius: 50%;
+}
+
+.kare-icon-note::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  width: 2px;
+  height: 16px;
+  background: var(--ive-gray-900);
+  border-radius: 1px;
+}
+
+/* === EMOTIONAL STATES === */
+/* Filosofía: "Los iconos deben reflejar el estado emocional del usuario" */
+
+/* Corazón favorito - Evolución emocional */
+.kare-icon-heart {
+  position: relative;
+  width: 20px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.kare-icon-heart::before,
+.kare-icon-heart::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 16px;
+  background: var(--ive-gray-400);
+  border-radius: 10px 10px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.kare-icon-heart::after {
+  left: 5px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* Estado activo - Corazón lleno */
+.kare-icon-heart.active::before,
+.kare-icon-heart.active::after {
+  background: var(--ive-pink);
+  transform: scale(1.1) rotate(-45deg);
+}
+
+.kare-icon-heart.active::after {
+  transform: scale(1.1) rotate(45deg);
+}
+
+/* === NAVIGATION METAPHORS === */
+/* Filosofía: "La navegación debe ser intuitiva como caminar" */
+
+/* Flecha de navegación - Dirección clara */
+.kare-icon-arrow {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--ive-gray-600);
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+  transition: all 0.2s ease;
+}
+
+.kare-icon-arrow:hover {
+  border-color: var(--ive-blue);
+  transform: rotate(45deg) scale(1.1);
+}
+
+/* Flecha izquierda */
+.kare-icon-arrow--left {
+  transform: rotate(-135deg);
+}
+
+.kare-icon-arrow--left:hover {
+  transform: rotate(-135deg) scale(1.1);
+}
+
+/* === SHOPPING METAPHORS === */
+/* Filosofía: "El comercio digital debe sentirse familiar" */
+
+/* Carrito de compras - Metáfora del supermercado */
+.kare-icon-cart {
+  position: relative;
+  width: 24px;
+  height: 20px;
+}
+
+.kare-icon-cart::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 12px;
+  border: 2px solid var(--ive-gray-700);
+  border-radius: 2px;
+  background: transparent;
+}
+
+.kare-icon-cart::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  width: 3px;
+  height: 3px;
+  background: var(--ive-gray-700);
+  border-radius: 50%;
+  box-shadow: 8px 0 0 var(--ive-gray-700);
+}
+
+/* === STATUS INDICATORS === */
+/* Filosofía: "El estado del sistema debe ser obvio sin palabras" */
+
+/* Indicador de carga - Spinner humanizado */
+.kare-icon-loading {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ive-gray-200);
+  border-top: 2px solid var(--ive-blue);
+  border-radius: 50%;
+  animation: kareSpinning 1s linear infinite;
+}
+
+@keyframes kareSpinning {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Checkmark de éxito - Satisfacción visual */
+.kare-icon-check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ive-green);
+  border-radius: 50%;
+  background: var(--ive-green);
+}
+
+.kare-icon-check::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 3px;
+  height: 8px;
+  border: solid var(--ive-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* === CONTEXTUAL HELPERS === */
+/* Filosofía: "Los iconos deben guiar sin molestar" */
+
+/* Tooltip indicator */
+.kare-icon-info {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--ive-blue);
+  border-radius: 50%;
+  background: var(--ive-blue);
+  color: var(--ive-white);
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+}
+
+.kare-icon-info::before {
+  content: 'i';
+  font-style: italic;
+}
+
+/* === RESPONSIVE SCALING === */
+/* Filosofía: "Los iconos deben ser legibles en cualquier tamaño" */
+
+@media (max-width: 768px) {
+  .kare-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .kare-icon-album {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .kare-icon-cart {
+    width: 28px;
+    height: 24px;
+  }
+}
+
+/* === ACCESSIBILITY === */
+/* Filosofía: "Los iconos deben ser universalmente comprensibles" */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .kare-icon-heart::before,
+  .kare-icon-heart::after {
+    background: var(--ive-gray-900);
+  }
+  
+  .kare-icon-cart::before,
+  .kare-icon-cart::after {
+    border-color: var(--ive-gray-900);
+    background: var(--ive-gray-900);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .kare-icon {
+    transition: none;
+  }
+  
+  .kare-icon-loading {
+    animation: none;
+    border-top-color: var(--ive-blue);
+  }
+}
+
+/* === INTEGRATION WITH FLOATING CART === */
+/* Filosofía: "Los iconos deben integrarse perfectamente con Jony Ive" */
+
+.floating-cart-icon.kare-icon-cart {
+  width: 24px;
+  height: 20px;
+  filter: brightness(0) invert(1); /* Blanco para contraste */
+}
+
+/* === BUTTON INTEGRATION === */
+/* Filosofía: "Los iconos en botones deben ser proporcionados" */
+
+.btn .kare-icon-cart,
+.btn .kare-icon-heart {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.btn-primary .kare-icon-cart {
+  filter: brightness(0) invert(1); /* Blanco en botón primario */
+}
+
+/* === CARD HEADER INTEGRATION === */
+/* Filosofía: "Los iconos en headers deben complementar la tipografía" */
+
+.card-header .kare-icon-album,
+.card-header .kare-icon-note,
+.card-header .kare-icon-info {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}

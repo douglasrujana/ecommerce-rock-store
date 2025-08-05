@@ -1,0 +1,1260 @@
+{
+  "config": {
+    "configFile": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\playwright.config.js",
+    "rootDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\helpers\\global-setup.js",
+    "globalTeardown": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\helpers\\global-teardown.js",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "tests/E2E/reports/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "tests/E2E/reports/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "tests/E2E/reports/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "c:/MyCode/php/udy_curso_laravel12/sistema/tests/E2E/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 2,
+    "webServer": {
+      "command": "php artisan serve --port=8000 --env=testing",
+      "url": "http://localhost:8000",
+      "reuseExistingServer": true,
+      "timeout": 120000,
+      "env": {
+        "APP_ENV": "testing",
+        "DB_CONNECTION": "sqlite",
+        "DB_DATABASE": "database/testing.sqlite",
+        "MAIL_MAILER": "array"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "susan-kare-interactions.spec.js",
+      "file": "susan-kare-interactions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Susan Kare Iconography",
+          "file": "susan-kare-interactions.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display Susan Kare icons correctly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7048,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55",
+                        "location": {
+                          "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                          "column": 55,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m     test(\u001b[32m'should display Susan Kare icons correctly'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m         \u001b[90m// Verificar que los iconos Susan Kare están presentes\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-cart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-heart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-album'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-note'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 55,
+                            "line": 16
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n\n  14 |     test('should display Susan Kare icons correctly', async ({ page }) => {\n  15 |         // Verificar que los iconos Susan Kare están presentes\n> 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();\n     |                                                       ^\n  17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();\n  18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();\n  19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T04:59:30.433Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                        "column": 55,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-86249f8ad218d492c8c2",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "should animate heart icon when clicked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6416,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T04:59:30.381Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-6fa22ee85e68bf453aef",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "should show loading state when adding to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5693,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T04:59:37.833Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-be516966b02bb5b6afbd",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 37,
+              "column": 9
+            },
+            {
+              "title": "should show tooltip on info icon hover",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30909,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 24,
+                            "line": 54
+                          },
+                          "message": "Error: locator.hover: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.kare-icon-info').first()\u001b[22m\n\n\n  52 |         \n  53 |         // Hover sobre el icono de información\n> 54 |         await infoIcon.hover();\n     |                        ^\n  55 |         \n  56 |         // Verificar que aparece el tooltip\n  57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:54:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T04:59:42.644Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-3cf5bba127efd53443ff",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 50,
+              "column": 9
+            },
+            {
+              "title": "should display Susan Kare icons correctly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 7493,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55",
+                        "location": {
+                          "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                          "column": 55,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m     test(\u001b[32m'should display Susan Kare icons correctly'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m         \u001b[90m// Verificar que los iconos Susan Kare están presentes\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-cart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-heart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-album'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-note'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 55,
+                            "line": 16
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n\n  14 |     test('should display Susan Kare icons correctly', async ({ page }) => {\n  15 |         // Verificar que los iconos Susan Kare están presentes\n> 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();\n     |                                                       ^\n  17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();\n  18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();\n  19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T04:59:45.930Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                        "column": 55,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-78c359876383df231679",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "should animate heart icon when clicked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6180,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T04:59:57.078Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-54a5d25bcd3934558ef1",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "should show loading state when adding to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3721,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:04.129Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-701647f555893c54b37b",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 37,
+              "column": 9
+            },
+            {
+              "title": "should show tooltip on info icon hover",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 31416,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 24,
+                            "line": 54
+                          },
+                          "message": "Error: locator.hover: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.kare-icon-info').first()\u001b[22m\n\n\n  52 |         \n  53 |         // Hover sobre el icono de información\n> 54 |         await infoIcon.hover();\n     |                        ^\n  55 |         \n  56 |         // Verificar que aparece el tooltip\n  57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:54:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:07.856Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-9a309051bc34b12aedb6",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 50,
+              "column": 9
+            },
+            {
+              "title": "should display Susan Kare icons correctly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4565,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55",
+                        "location": {
+                          "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                          "column": 55,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m     test(\u001b[32m'should display Susan Kare icons correctly'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m         \u001b[90m// Verificar que los iconos Susan Kare están presentes\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-cart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-heart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-album'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-note'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 55,
+                            "line": 16
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n\n  14 |     test('should display Susan Kare icons correctly', async ({ page }) => {\n  15 |         // Verificar que los iconos Susan Kare están presentes\n> 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();\n     |                                                       ^\n  17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();\n  18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();\n  19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:15.765Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                        "column": 55,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-752cfb3033a067371841",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "should animate heart icon when clicked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6092,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:22.732Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-b3ef4d28014f567d9518",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "should show loading state when adding to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5456,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:28.918Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-37acc4591edc6a394feb",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 37,
+              "column": 9
+            },
+            {
+              "title": "should show tooltip on info icon hover",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30894,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 24,
+                            "line": 54
+                          },
+                          "message": "Error: locator.hover: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.kare-icon-info').first()\u001b[22m\n\n\n  52 |         \n  53 |         // Hover sobre el icono de información\n> 54 |         await infoIcon.hover();\n     |                        ^\n  55 |         \n  56 |         // Verificar que aparece el tooltip\n  57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:54:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:34.391Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-e254770d6263db791829",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 50,
+              "column": 9
+            },
+            {
+              "title": "should display Susan Kare icons correctly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 5241,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55",
+                        "location": {
+                          "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                          "column": 55,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m     test(\u001b[32m'should display Susan Kare icons correctly'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m         \u001b[90m// Verificar que los iconos Susan Kare están presentes\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-cart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-heart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-album'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-note'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 55,
+                            "line": 16
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n\n  14 |     test('should display Susan Kare icons correctly', async ({ page }) => {\n  15 |         // Verificar que los iconos Susan Kare están presentes\n> 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();\n     |                                                       ^\n  17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();\n  18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();\n  19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:42.547Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                        "column": 55,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-124742c739b2ffa92cef",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "should animate heart icon when clicked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5348,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:50.766Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-fa369a9f3e62cd2983da",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "should show loading state when adding to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5444,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:00:56.575Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-94ca5d0252ab2afc5f02",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 37,
+              "column": 9
+            },
+            {
+              "title": "should show tooltip on info icon hover",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 31289,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 24,
+                            "line": 54
+                          },
+                          "message": "Error: locator.hover: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.kare-icon-info').first()\u001b[22m\n\n\n  52 |         \n  53 |         // Hover sobre el icono de información\n> 54 |         await infoIcon.hover();\n     |                        ^\n  55 |         \n  56 |         // Verificar que aparece el tooltip\n  57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:54:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:01:02.024Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-4f57ac2428a7f3d19d28",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 50,
+              "column": 9
+            },
+            {
+              "title": "should display Susan Kare icons correctly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4469,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55",
+                        "location": {
+                          "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                          "column": 55,
+                          "line": 16
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m     test(\u001b[32m'should display Susan Kare icons correctly'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 15 |\u001b[39m         \u001b[90m// Verificar que los iconos Susan Kare están presentes\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-cart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-heart'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-album'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.kare-icon-note'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 55,
+                            "line": 16
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:\n    1) <span class=\"kare-icon-cart me-2\"></span> aka getByRole('button', { name: 'Agregar al carrito' })\n    2) <span class=\"kare-icon-cart floating-cart-icon\"></span> aka locator('.kare-icon-cart.floating-cart-icon')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.kare-icon-cart')\u001b[22m\n\n\n  14 |     test('should display Susan Kare icons correctly', async ({ page }) => {\n  15 |         // Verificar que los iconos Susan Kare están presentes\n> 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();\n     |                                                       ^\n  17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();\n  18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();\n  19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:16:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:01:06.787Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                        "column": 55,
+                        "line": 16
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-8c7e9f0ded128d895409",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "should animate heart icon when clicked",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5565,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:01:12.664Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-4393b96436efee0f8753",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "should show loading state when adding to cart",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5197,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:01:18.289Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-072958824cea80e64cae",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 37,
+              "column": 9
+            },
+            {
+              "title": "should show tooltip on info icon hover",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30583,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js",
+                            "column": 24,
+                            "line": 54
+                          },
+                          "message": "Error: locator.hover: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.kare-icon-info').first()\u001b[22m\n\n\n  52 |         \n  53 |         // Hover sobre el icono de información\n> 54 |         await infoIcon.hover();\n     |                        ^\n  55 |         \n  56 |         // Verificar que aparece el tooltip\n  57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();\n    at c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\tests\\susan-kare-interactions.spec.js:54:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-03T05:01:23.498Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "c:\\MyCode\\php\\udy_curso_laravel12\\sistema\\tests\\E2E\\test-results\\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "316047e50e472cf2161f-85a9a27642a5918e4b79",
+              "file": "susan-kare-interactions.spec.js",
+              "line": 50,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-03T04:59:27.851Z",
+    "duration": 147176.99399999998,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  }
+}

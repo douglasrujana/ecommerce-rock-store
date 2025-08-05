@@ -1,0 +1,222 @@
+/* 
+🎨 JONY IVE DESIGN SYSTEM
+"Simplicity is the ultimate sophistication. Every element must earn its place."
+
+Este archivo orquesta todo el sistema de diseño, importando cada componente
+en el orden correcto para crear una experiencia cohesiva.
+
+Filosofía de carga:
+1. Tokens (fundamentos)
+2. Componentes (elementos)
+3. Layouts (estructura)
+4. Utilidades (ajustes finales)
+*/
+
+/* === FUNDAMENTOS === */
+/* Los tokens son la base de todo el sistema */
+@import url('./tokens/colors.css');
+@import url('./tokens/spacing.css');
+@import url('./tokens/typography.css');
+
+/* === COMPONENTES === */
+/* Elementos de interfaz que siguen los principios de Ive */
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/floating-cart.css');
+@import url('./components/apple-store-patterns.css');
+@import url('./components/apple-navigation.css');
+@import url('./components/apple-carousel.css');
+@import url('./components/apple-cart.css');
+
+/* === OVERRIDES BOOTSTRAP === */
+/* Filosofía: "Bootstrap como estructura, Ive como alma" */
+
+/* Reset de elementos que chocan con nuestra filosofía */
+.bg-primary { 
+  background: var(--ive-gradient-blue) !important; 
+}
+
+.bg-light { 
+  background: var(--ive-gray-50) !important; 
+}
+
+.text-white { 
+  color: var(--ive-white) !important; 
+}
+
+.text-muted { 
+  color: var(--ive-gray-500) !important; 
+}
+
+/* Contenedores más respirables */
+.container,
+.container-fluid {
+  padding-left: var(--ive-space-6);
+  padding-right: var(--ive-space-6);
+}
+
+/* Secciones con espaciado generoso */
+section {
+  padding-top: var(--ive-space-12);
+  padding-bottom: var(--ive-space-12);
+}
+
+.py-5 {
+  padding-top: var(--ive-space-10) !important;
+  padding-bottom: var(--ive-space-10) !important;
+}
+
+/* === UTILIDADES GLOBALES === */
+/* Filosofía: "Herramientas simples para decisiones complejas" */
+
+/* Glassmorphism */
+.glass {
+  background: var(--ive-glass-light);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Elevación */
+.elevated {
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Transiciones naturales */
+.smooth {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* === MEJORAS ESPECÍFICAS === */
+/* Aplicaciones directas de la filosofía Ive a elementos existentes */
+
+/* Alertas más sutiles */
+.alert {
+  border: none;
+  border-radius: 12px;
+  background: var(--ive-gray-50);
+  color: var(--ive-gray-700);
+  border-left: 3px solid var(--ive-blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Inputs más elegantes */
+input[type="number"],
+input[type="text"],
+input[type="email"] {
+  border: 1px solid var(--ive-gray-200);
+  border-radius: 8px;
+  padding: var(--ive-space-3);
+  font-family: var(--ive-font-system);
+  font-size: var(--ive-text-base);
+  transition: all 0.2s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: var(--ive-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* === ANIMACIONES GLOBALES === */
+/* Filosofía: "Las animaciones deben tener propósito, no ser decorativas" */
+
+/* Aparición suave de elementos */
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover universal para elementos interactivos */
+.interactive:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* === RESPONSIVIDAD === */
+/* Filosofía: "El diseño debe adaptarse sin perder su esencia" */
+
+@media (max-width: 768px) {
+  .container,
+  .container-fluid {
+    padding-left: var(--ive-space-4);
+    padding-right: var(--ive-space-4);
+  }
+  
+  section {
+    padding-top: var(--ive-space-8);
+    padding-bottom: var(--ive-space-8);
+  }
+  
+  .py-5 {
+    padding-top: var(--ive-space-6) !important;
+    padding-bottom: var(--ive-space-6) !important;
+  }
+}
+
+/* === MODO OSCURO === */
+/* Filosofía: "El modo oscuro no es invertir colores, es repensar la luz" */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: var(--ive-gray-100);
+    box-shadow: 
+      0 1px 3px rgba(255, 255, 255, 0.05),
+      0 4px 16px rgba(255, 255, 255, 0.08);
+  }
+  
+  .alert {
+    background: var(--ive-gray-200);
+    color: var(--ive-gray-800);
+  }
+}
+
+/* === ACCESIBILIDAD === */
+/* Filosofía: "El diseño debe ser inclusivo por defecto" */
+
+/* Respeto por las preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Contraste mejorado para usuarios que lo necesitan */
+@media (prefers-contrast: high) {
+  :root {
+    --ive-gray-300: #999999;
+    --ive-gray-500: #666666;
+    --ive-gray-700: #333333;
+  }
+}
+
+/* === DEBUG MODE === */
+/* Filosofía: "Las herramientas de desarrollo deben ser elegantes también" */
+.debug * {
+  outline: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.debug .card {
+  outline: 2px solid rgba(0, 122, 255, 0.5);
+}
+
+.debug .btn {
+  outline: 2px solid rgba(52, 199, 89, 0.5);
+}

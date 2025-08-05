@@ -1,0 +1,552 @@
+<testsuites id="" name="" tests="20" failures="10" skipped="0" errors="0" time="147.17699399999998">
+<testsuite name="susan-kare-interactions.spec.js" timestamp="2025-08-03T04:59:29.283Z" hostname="chromium" tests="4" failures="2" skipped="0" time="50.066" errors="0">
+<testcase name="Susan Kare Iconography › should display Susan Kare icons correctly" classname="susan-kare-interactions.spec.js" time="7.048">
+<failure message="susan-kare-interactions.spec.js:14:9 should display Susan Kare icons correctly" type="FAILURE">
+<![CDATA[  [chromium] › susan-kare-interactions.spec.js:14:9 › Susan Kare Iconography › should display Susan Kare icons correctly 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:
+        1) <span class="kare-icon-cart me-2"></span> aka getByRole('button', { name: 'Agregar al carrito' })
+        2) <span class="kare-icon-cart floating-cart-icon"></span> aka locator('.kare-icon-cart.floating-cart-icon')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('.kare-icon-cart')
+
+
+      14 |     test('should display Susan Kare icons correctly', async ({ page }) => {
+      15 |         // Verificar que los iconos Susan Kare están presentes
+    > 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();
+         |                                                       ^
+      17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();
+      18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();
+      19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:16:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Susan Kare Iconography › should animate heart icon when clicked" classname="susan-kare-interactions.spec.js" time="6.416">
+</testcase>
+<testcase name="Susan Kare Iconography › should show loading state when adding to cart" classname="susan-kare-interactions.spec.js" time="5.693">
+</testcase>
+<testcase name="Susan Kare Iconography › should show tooltip on info icon hover" classname="susan-kare-interactions.spec.js" time="30.909">
+<failure message="susan-kare-interactions.spec.js:50:9 should show tooltip on info icon hover" type="FAILURE">
+<![CDATA[  [chromium] › susan-kare-interactions.spec.js:50:9 › Susan Kare Iconography › should show tooltip on info icon hover 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.hover: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.kare-icon-info').first()
+
+
+      52 |         
+      53 |         // Hover sobre el icono de información
+    > 54 |         await infoIcon.hover();
+         |                        ^
+      55 |         
+      56 |         // Verificar que aparece el tooltip
+      57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:54:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="susan-kare-interactions.spec.js" timestamp="2025-08-03T04:59:29.283Z" hostname="firefox" tests="4" failures="2" skipped="0" time="48.81" errors="0">
+<testcase name="Susan Kare Iconography › should display Susan Kare icons correctly" classname="susan-kare-interactions.spec.js" time="7.493">
+<failure message="susan-kare-interactions.spec.js:14:9 should display Susan Kare icons correctly" type="FAILURE">
+<![CDATA[  [firefox] › susan-kare-interactions.spec.js:14:9 › Susan Kare Iconography › should display Susan Kare icons correctly 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:
+        1) <span class="kare-icon-cart me-2"></span> aka getByRole('button', { name: 'Agregar al carrito' })
+        2) <span class="kare-icon-cart floating-cart-icon"></span> aka locator('.kare-icon-cart.floating-cart-icon')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('.kare-icon-cart')
+
+
+      14 |     test('should display Susan Kare icons correctly', async ({ page }) => {
+      15 |         // Verificar que los iconos Susan Kare están presentes
+    > 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();
+         |                                                       ^
+      17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();
+      18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();
+      19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:16:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-firefox\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Susan Kare Iconography › should animate heart icon when clicked" classname="susan-kare-interactions.spec.js" time="6.18">
+</testcase>
+<testcase name="Susan Kare Iconography › should show loading state when adding to cart" classname="susan-kare-interactions.spec.js" time="3.721">
+</testcase>
+<testcase name="Susan Kare Iconography › should show tooltip on info icon hover" classname="susan-kare-interactions.spec.js" time="31.416">
+<failure message="susan-kare-interactions.spec.js:50:9 should show tooltip on info icon hover" type="FAILURE">
+<![CDATA[  [firefox] › susan-kare-interactions.spec.js:50:9 › Susan Kare Iconography › should show tooltip on info icon hover 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.hover: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.kare-icon-info').first()
+
+
+      52 |         
+      53 |         // Hover sobre el icono de información
+    > 54 |         await infoIcon.hover();
+         |                        ^
+      55 |         
+      56 |         // Verificar que aparece el tooltip
+      57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:54:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-firefox\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="susan-kare-interactions.spec.js" timestamp="2025-08-03T04:59:29.283Z" hostname="webkit" tests="4" failures="2" skipped="0" time="47.007" errors="0">
+<testcase name="Susan Kare Iconography › should display Susan Kare icons correctly" classname="susan-kare-interactions.spec.js" time="4.565">
+<failure message="susan-kare-interactions.spec.js:14:9 should display Susan Kare icons correctly" type="FAILURE">
+<![CDATA[  [webkit] › susan-kare-interactions.spec.js:14:9 › Susan Kare Iconography › should display Susan Kare icons correctly 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:
+        1) <span class="kare-icon-cart me-2"></span> aka getByRole('button', { name: 'Agregar al carrito' })
+        2) <span class="kare-icon-cart floating-cart-icon"></span> aka locator('.kare-icon-cart.floating-cart-icon')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('.kare-icon-cart')
+
+
+      14 |     test('should display Susan Kare icons correctly', async ({ page }) => {
+      15 |         // Verificar que los iconos Susan Kare están presentes
+    > 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();
+         |                                                       ^
+      17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();
+      18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();
+      19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:16:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-webkit\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Susan Kare Iconography › should animate heart icon when clicked" classname="susan-kare-interactions.spec.js" time="6.092">
+</testcase>
+<testcase name="Susan Kare Iconography › should show loading state when adding to cart" classname="susan-kare-interactions.spec.js" time="5.456">
+</testcase>
+<testcase name="Susan Kare Iconography › should show tooltip on info icon hover" classname="susan-kare-interactions.spec.js" time="30.894">
+<failure message="susan-kare-interactions.spec.js:50:9 should show tooltip on info icon hover" type="FAILURE">
+<![CDATA[  [webkit] › susan-kare-interactions.spec.js:50:9 › Susan Kare Iconography › should show tooltip on info icon hover 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.hover: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.kare-icon-info').first()
+
+
+      52 |         
+      53 |         // Hover sobre el icono de información
+    > 54 |         await infoIcon.hover();
+         |                        ^
+      55 |         
+      56 |         // Verificar que aparece el tooltip
+      57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:54:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-webkit\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="susan-kare-interactions.spec.js" timestamp="2025-08-03T04:59:29.283Z" hostname="Mobile Chrome" tests="4" failures="2" skipped="0" time="47.322" errors="0">
+<testcase name="Susan Kare Iconography › should display Susan Kare icons correctly" classname="susan-kare-interactions.spec.js" time="5.241">
+<failure message="susan-kare-interactions.spec.js:14:9 should display Susan Kare icons correctly" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › susan-kare-interactions.spec.js:14:9 › Susan Kare Iconography › should display Susan Kare icons correctly 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:
+        1) <span class="kare-icon-cart me-2"></span> aka getByRole('button', { name: 'Agregar al carrito' })
+        2) <span class="kare-icon-cart floating-cart-icon"></span> aka locator('.kare-icon-cart.floating-cart-icon')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('.kare-icon-cart')
+
+
+      14 |     test('should display Susan Kare icons correctly', async ({ page }) => {
+      15 |         // Verificar que los iconos Susan Kare están presentes
+    > 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();
+         |                                                       ^
+      17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();
+      18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();
+      19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:16:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Chrome\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Susan Kare Iconography › should animate heart icon when clicked" classname="susan-kare-interactions.spec.js" time="5.348">
+</testcase>
+<testcase name="Susan Kare Iconography › should show loading state when adding to cart" classname="susan-kare-interactions.spec.js" time="5.444">
+</testcase>
+<testcase name="Susan Kare Iconography › should show tooltip on info icon hover" classname="susan-kare-interactions.spec.js" time="31.289">
+<failure message="susan-kare-interactions.spec.js:50:9 should show tooltip on info icon hover" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › susan-kare-interactions.spec.js:50:9 › Susan Kare Iconography › should show tooltip on info icon hover 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.hover: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.kare-icon-info').first()
+
+
+      52 |         
+      53 |         // Hover sobre el icono de información
+    > 54 |         await infoIcon.hover();
+         |                        ^
+      55 |         
+      56 |         // Verificar que aparece el tooltip
+      57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:54:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Chrome\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="susan-kare-interactions.spec.js" timestamp="2025-08-03T04:59:29.283Z" hostname="Mobile Safari" tests="4" failures="2" skipped="0" time="45.814" errors="0">
+<testcase name="Susan Kare Iconography › should display Susan Kare icons correctly" classname="susan-kare-interactions.spec.js" time="4.469">
+<failure message="susan-kare-interactions.spec.js:14:9 should display Susan Kare icons correctly" type="FAILURE">
+<![CDATA[  [Mobile Safari] › susan-kare-interactions.spec.js:14:9 › Susan Kare Iconography › should display Susan Kare icons correctly 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('.kare-icon-cart') resolved to 2 elements:
+        1) <span class="kare-icon-cart me-2"></span> aka getByRole('button', { name: 'Agregar al carrito' })
+        2) <span class="kare-icon-cart floating-cart-icon"></span> aka locator('.kare-icon-cart.floating-cart-icon')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('.kare-icon-cart')
+
+
+      14 |     test('should display Susan Kare icons correctly', async ({ page }) => {
+      15 |         // Verificar que los iconos Susan Kare están presentes
+    > 16 |         await expect(page.locator('.kare-icon-cart')).toBeVisible();
+         |                                                       ^
+      17 |         await expect(page.locator('.kare-icon-heart')).toBeVisible();
+      18 |         await expect(page.locator('.kare-icon-album')).toBeVisible();
+      19 |         await expect(page.locator('.kare-icon-note')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:16:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-2dfad--Susan-Kare-icons-correctly-Mobile-Safari\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Susan Kare Iconography › should animate heart icon when clicked" classname="susan-kare-interactions.spec.js" time="5.565">
+</testcase>
+<testcase name="Susan Kare Iconography › should show loading state when adding to cart" classname="susan-kare-interactions.spec.js" time="5.197">
+</testcase>
+<testcase name="Susan Kare Iconography › should show tooltip on info icon hover" classname="susan-kare-interactions.spec.js" time="30.583">
+<failure message="susan-kare-interactions.spec.js:50:9 should show tooltip on info icon hover" type="FAILURE">
+<![CDATA[  [Mobile Safari] › susan-kare-interactions.spec.js:50:9 › Susan Kare Iconography › should show tooltip on info icon hover 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.hover: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.kare-icon-info').first()
+
+
+      52 |         
+      53 |         // Hover sobre el icono de información
+    > 54 |         await infoIcon.hover();
+         |                        ^
+      55 |         
+      56 |         // Verificar que aparece el tooltip
+      57 |         await expect(page.locator('.kare-tooltip')).toBeVisible();
+        at c:\MyCode\php\udy_curso_laravel12\sistema\tests\E2E\tests\susan-kare-interactions.spec.js:54:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\video.webm]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\error-context.md]]
+
+[[ATTACHMENT|..\..\..\test-results\susan-kare-interactions-Su-290f6--tooltip-on-info-icon-hover-Mobile-Safari\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

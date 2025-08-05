@@ -1,0 +1,327 @@
+/* 
+🍎 APPLE STORE UX PATTERNS
+Patrones de experiencia de usuario inspirados en Apple Store (sin plagio)
+
+Principios aplicados:
+- Progressive disclosure (revelación progresiva de información)
+- Sticky purchase controls (controles de compra siempre visibles)
+- Visual hierarchy through typography scale
+- Contextual information architecture
+- Micro-interactions that guide user behavior
+*/
+
+/* === STICKY PURCHASE BAR === */
+/* Patrón: Controles de compra siempre accesibles */
+.purchase-controls-sticky {
+  position: sticky;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: var(--ive-space-5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+/* === PROGRESSIVE DISCLOSURE === */
+/* Patrón: Información se revela según relevancia */
+.info-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.info-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-section + .info-section {
+  margin-top: var(--ive-space-8);
+}
+
+/* === PRODUCT HERO SECTION === */
+/* Patrón: Presentación dramática pero elegante */
+.product-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--ive-gray-50) 0%, var(--ive-white) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(0, 122, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.product-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.product-hero-image {
+  position: relative;
+  z-index: 1;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-hero:hover .product-hero-image {
+  transform: scale(1.02);
+}
+
+/* === FEATURE CALLOUTS === */
+/* Patrón: Destacar características clave sin saturar */
+.feature-callout {
+  background: var(--ive-white);
+  border-radius: 20px;
+  padding: var(--ive-space-8);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature-callout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 122, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-callout:hover::before {
+  opacity: 1;
+}
+
+.feature-callout:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--ive-space-4);
+  background: var(--ive-gradient-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ive-white);
+  font-size: 1.5rem;
+}
+
+/* === TECHNICAL SPECS ACCORDION === */
+/* Patrón: Información técnica organizada y accesible */
+.tech-specs {
+  background: var(--ive-gray-50);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tech-spec-item {
+  border-bottom: 1px solid var(--ive-gray-200);
+  transition: background-color 0.2s ease;
+}
+
+.tech-spec-item:last-child {
+  border-bottom: none;
+}
+
+.tech-spec-header {
+  padding: var(--ive-space-4) var(--ive-space-6);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: var(--ive-font-medium);
+  color: var(--ive-gray-800);
+}
+
+.tech-spec-header:hover {
+  background: var(--ive-gray-100);
+}
+
+.tech-spec-content {
+  padding: 0 var(--ive-space-6) var(--ive-space-4);
+  color: var(--ive-gray-600);
+  line-height: var(--ive-leading-relaxed);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tech-spec-item.active .tech-spec-content {
+  max-height: 200px;
+}
+
+.tech-spec-icon {
+  transition: transform 0.3s ease;
+}
+
+.tech-spec-item.active .tech-spec-icon {
+  transform: rotate(180deg);
+}
+
+/* === QUANTITY SELECTOR APPLE STYLE === */
+/* Patrón: Controles de cantidad elegantes y táctiles */
+.quantity-selector {
+  display: inline-flex;
+  align-items: center;
+  background: var(--ive-gray-100);
+  border-radius: 12px;
+  padding: var(--ive-space-1);
+  gap: var(--ive-space-2);
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: var(--ive-white);
+  color: var(--ive-gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: var(--ive-font-medium);
+}
+
+.quantity-btn:hover {
+  background: var(--ive-gray-200);
+  color: var(--ive-gray-800);
+  transform: scale(1.05);
+}
+
+.quantity-btn:active {
+  transform: scale(0.95);
+}
+
+.quantity-input {
+  width: 60px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: var(--ive-font-medium);
+  color: var(--ive-gray-800);
+  font-size: var(--ive-text-base);
+}
+
+.quantity-input:focus {
+  outline: none;
+}
+
+/* === RELATED PRODUCTS CAROUSEL === */
+/* Patrón: Navegación horizontal fluida */
+.related-products {
+  position: relative;
+  overflow: hidden;
+}
+
+.related-products-track {
+  display: flex;
+  gap: var(--ive-space-5);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: var(--ive-space-2) 0;
+}
+
+.related-product-card {
+  flex: 0 0 280px;
+  background: var(--ive-white);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.related-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.related-product-image {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.related-product-card:hover .related-product-image {
+  transform: scale(1.05);
+}
+
+/* === PURCHASE CONFIDENCE INDICATORS === */
+/* Patrón: Elementos que generan confianza en la compra */
+.confidence-indicators {
+  display: flex;
+  gap: var(--ive-space-6);
+  margin: var(--ive-space-6) 0;
+  padding: var(--ive-space-4);
+  background: var(--ive-gray-50);
+  border-radius: 12px;
+}
+
+.confidence-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ive-space-2);
+  color: var(--ive-gray-600);
+  font-size: var(--ive-text-sm);
+}
+
+.confidence-icon {
+  color: var(--ive-green);
+  font-size: 1.1em;
+}
+
+/* === RESPONSIVE ADAPTATIONS === */
+@media (max-width: 768px) {
+  .purchase-controls-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    border-radius: 16px 16px 0 0;
+    margin: 0;
+  }
+  
+  .product-hero {
+    min-height: 50vh;
+    text-align: center;
+  }
+  
+  .confidence-indicators {
+    flex-direction: column;
+    gap: var(--ive-space-3);
+  }
+  
+  .related-products-track {
+    gap: var(--ive-space-3);
+  }
+  
+  .related-product-card {
+    flex: 0 0 240px;
+  }
+}

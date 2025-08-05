@@ -1,0 +1,6 @@
+/* CSS principal - carga módulos según la página */
+
+/* Importar estilos comunes */
+@import url('./modules/common/animations.css');
+
+/* Los estilos específicos se cargan condicionalmente desde las vistas */

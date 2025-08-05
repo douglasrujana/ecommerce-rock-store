@@ -1,0 +1,246 @@
+/* 
+🃏 JONY IVE CARD PHILOSOPHY
+"A card should feel like a physical object that you can pick up, but weightless enough to float."
+
+Principios aplicados:
+- Profundidad a través de sombras sutiles, no bordes gruesos
+- Contenido que respira dentro de su contenedor
+- Transiciones que imitan la física real
+- Jerarquía visual clara sin ornamentación
+- Glassmorphism sutil para crear capas de información
+*/
+
+/* === CARD BASE === */
+/* Filosofía: "Una tarjeta debe sentirse sólida pero no pesada" */
+.card {
+  /* Eliminar estilos Bootstrap por defecto */
+  border: none;
+  
+  /* Forma suave que invita a la interacción */
+  border-radius: 16px;
+  
+  /* Sombra que sugiere elevación sin peso */
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+  
+  /* Fondo con sutileza */
+  background: var(--ive-white);
+  
+  /* Transición que se siente natural */
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Espaciado interno generoso */
+  overflow: hidden;
+  
+  /* Preparar para glassmorphism */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* === ESTADOS INTERACTIVOS === */
+/* Filosofía: "La tarjeta debe responder como un objeto físico" */
+.card:hover {
+  /* Elevación sutil */
+  transform: translateY(-2px);
+  
+  /* Sombra más pronunciada */
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card:active {
+  /* Presión hacia abajo */
+  transform: translateY(0);
+  
+  /* Sombra reducida */
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* === CARD BODY === */
+/* Filosofía: "El contenido debe respirar dentro de su contenedor" */
+.card-body {
+  padding: var(--ive-space-6);
+  
+  /* Espaciado entre elementos */
+  display: flex;
+  flex-direction: column;
+  gap: var(--ive-space-4);
+}
+
+/* === CARD HEADER REIMAGINADO === */
+/* Filosofía: "Los headers no necesitan colores gritones para ser importantes" */
+.card-header {
+  /* Eliminar estilos Bootstrap coloridos */
+  background: transparent !important;
+  border: none !important;
+  color: var(--ive-gray-800) !important;
+  
+  /* Espaciado elegante */
+  padding: var(--ive-space-6) var(--ive-space-6) var(--ive-space-3);
+  
+  /* Tipografía clara */
+  font-weight: var(--ive-font-semibold);
+  font-size: var(--ive-text-lg);
+  
+  /* Separador sutil */
+  border-bottom: 1px solid var(--ive-gray-100) !important;
+  margin-bottom: var(--ive-space-3);
+}
+
+.card-header h5,
+.card-header h6 {
+  margin: 0;
+  color: var(--ive-gray-800);
+  font-weight: var(--ive-font-semibold);
+}
+
+/* === CARD FOOTER === */
+/* Filosofía: "El footer debe sentirse conectado pero separado" */
+.card-footer {
+  background: var(--ive-gray-50) !important;
+  border: none !important;
+  border-top: 1px solid var(--ive-gray-100) !important;
+  padding: var(--ive-space-4) var(--ive-space-6);
+}
+
+/* === CARD CON IMAGEN === */
+/* Filosofía: "La imagen debe fluir naturalmente con el contenido" */
+.card-img-top {
+  border-radius: 16px 16px 0 0;
+  
+  /* Transición suave para hover */
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.02);
+}
+
+/* === VARIANTES DE CARDS === */
+
+/* Card Glassmorphism */
+.card-glass {
+  background: var(--ive-glass-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Card Elevada */
+.card-elevated {
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 64px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Compacta */
+.card-compact .card-body {
+  padding: var(--ive-space-4);
+  gap: var(--ive-space-2);
+}
+
+/* === CARDS DE PRODUCTOS === */
+/* Filosofía: "Un producto debe presentarse como en una vitrina elegante" */
+.card-product {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-product::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-product:hover::before {
+  opacity: 1;
+}
+
+/* === CARDS DE INFORMACIÓN === */
+/* Filosofía: "La información debe organizarse en capas claras" */
+.card-info {
+  border-left: 3px solid var(--ive-blue);
+  background: linear-gradient(135deg, var(--ive-white) 0%, var(--ive-gray-50) 100%);
+}
+
+.card-info .card-header {
+  color: var(--ive-blue) !important;
+}
+
+/* === BADGES EN CARDS === */
+/* Filosofía: "Los badges deben ser informativos, no decorativos" */
+.card .badge {
+  background: var(--ive-gray-100) !important;
+  color: var(--ive-gray-600) !important;
+  font-weight: var(--ive-font-medium);
+  padding: var(--ive-space-1) var(--ive-space-3);
+  border-radius: 12px;
+  font-size: var(--ive-text-xs);
+  border: none;
+}
+
+.card .badge.bg-secondary {
+  background: var(--ive-gray-200) !important;
+  color: var(--ive-gray-700) !important;
+}
+
+.card .badge.bg-info {
+  background: rgba(0, 122, 255, 0.1) !important;
+  color: var(--ive-blue) !important;
+}
+
+/* === RESPONSIVIDAD === */
+/* Filosofía: "Las tarjetas deben adaptarse sin perder su esencia" */
+@media (max-width: 768px) {
+  .card-body {
+    padding: var(--ive-space-4);
+    gap: var(--ive-space-3);
+  }
+  
+  .card-header {
+    padding: var(--ive-space-4) var(--ive-space-4) var(--ive-space-2);
+  }
+  
+  .card-footer {
+    padding: var(--ive-space-3) var(--ive-space-4);
+  }
+}
+
+/* === ANIMACIONES ESPECIALES === */
+/* Filosofía: "Las animaciones deben tener propósito, no ser decorativas" */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-animate {
+  animation: cardAppear 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* === GRUPOS DE CARDS === */
+/* Filosofía: "Las tarjetas relacionadas deben sentirse como una familia" */
+.card-group .card {
+  margin-bottom: var(--ive-space-5);
+}
+
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ive-space-5);
+}

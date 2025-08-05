@@ -1,0 +1,213 @@
+/* 
+🔘 JONY IVE BUTTON PHILOSOPHY
+"A button should feel inevitable. When you see it, you know exactly what it will do."
+
+Principios aplicados:
+- Claridad de propósito sobre decoración
+- Estados que comunican feedback inmediato
+- Transiciones que se sienten naturales
+- Jerarquía visual clara entre tipos de botones
+- Accesibilidad como fundamento, no como añadido
+*/
+
+/* === BOTÓN BASE === */
+/* Filosofía: "Cada botón debe sentirse sólido pero no pesado" */
+.btn {
+  /* Tipografía optimizada */
+  font-family: var(--ive-font-system);
+  font-size: var(--ive-text-base);
+  font-weight: var(--ive-font-medium);
+  letter-spacing: var(--ive-letter-tight);
+  line-height: var(--ive-leading-none);
+  
+  /* Espaciado generoso pero proporcionado */
+  padding: var(--ive-space-3) var(--ive-space-6);
+  
+  /* Forma que invita al toque */
+  border-radius: 12px;
+  border: none;
+  
+  /* Transiciones que se sienten naturales */
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Cursor que comunica interactividad */
+  cursor: pointer;
+  
+  /* Eliminar estilos por defecto */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ive-space-2);
+  
+  /* Estados de enfoque accesibles */
+  outline: none;
+  position: relative;
+}
+
+/* === BOTÓN PRIMARIO === */
+/* Filosofía: "El botón más importante debe ser obvio sin ser agresivo" */
+.btn-primary {
+  background: var(--ive-gradient-blue);
+  color: var(--ive-white);
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.35);
+  color: var(--ive-white);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 122, 255, 0.4);
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
+/* === BOTÓN SECUNDARIO === */
+/* Filosofía: "Importante pero no dominante" */
+.btn-secondary,
+.btn-outline-secondary {
+  background: var(--ive-gray-100);
+  color: var(--ive-gray-700);
+  border: 1px solid var(--ive-gray-200);
+}
+
+.btn-secondary:hover,
+.btn-outline-secondary:hover {
+  background: var(--ive-gray-200);
+  color: var(--ive-gray-800);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === BOTÓN OUTLINE === */
+/* Filosofía: "Presente pero no intrusivo" */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--ive-gray-700);
+  border: 1px solid var(--ive-gray-300);
+}
+
+.btn-outline-dark:hover {
+  background: var(--ive-gray-50);
+  color: var(--ive-gray-900);
+  border-color: var(--ive-gray-400);
+  transform: translateY(-1px);
+}
+
+/* === BOTONES PEQUEÑOS === */
+/* Filosofía: "Pequeño en tamaño, no en importancia" */
+.btn-sm {
+  padding: var(--ive-space-2) var(--ive-space-4);
+  font-size: var(--ive-text-sm);
+  border-radius: 8px;
+}
+
+/* === BOTONES DE ACCIÓN RÁPIDA === */
+/* Filosofía: "Controles que se sienten como extensiones de tus dedos" */
+.btn[data-action] {
+  min-width: 44px; /* Tamaño mínimo táctil iOS */
+  min-height: 44px;
+  padding: var(--ive-space-2);
+  border-radius: 8px;
+  background: var(--ive-gray-100);
+  color: var(--ive-gray-600);
+  border: 1px solid var(--ive-gray-200);
+}
+
+.btn[data-action]:hover {
+  background: var(--ive-gray-200);
+  color: var(--ive-gray-700);
+  transform: scale(1.05);
+}
+
+.btn[data-action]:active {
+  transform: scale(0.95);
+  background: var(--ive-gray-300);
+}
+
+/* === BOTÓN FAVORITO === */
+/* Filosofía: "El corazón debe latir cuando lo tocas" */
+.btn[data-action="favorite"] {
+  color: var(--ive-gray-500);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn[data-action="favorite"]:hover {
+  color: var(--ive-pink);
+  transform: scale(1.1);
+}
+
+.btn[data-action="favorite"].active {
+  color: var(--ive-pink);
+  background: rgba(255, 45, 146, 0.1);
+}
+
+.btn[data-action="favorite"].active i {
+  animation: heartbeat 0.6s ease-in-out;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1.1); }
+  75% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* === ESTADOS DESHABILITADOS === */
+/* Filosofía: "Un botón deshabilitado debe explicar por qué no funciona" */
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* === BOTONES CON ICONOS === */
+/* Filosofía: "El icono y el texto deben ser una sola cosa" */
+.btn i {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.btn .btn-text {
+  font-weight: var(--ive-font-medium);
+}
+
+/* === GRUPOS DE BOTONES === */
+/* Filosofía: "Los controles relacionados deben sentirse unidos" */
+.btn-group .btn {
+  border-radius: 0;
+  border-right-width: 0;
+}
+
+.btn-group .btn:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-right-width: 1px;
+}
+
+/* === RESPONSIVIDAD === */
+/* Filosofía: "Los botones deben funcionar en cualquier dispositivo" */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px; /* Tamaño táctil iOS */
+    padding: var(--ive-space-3) var(--ive-space-5);
+  }
+  
+  .btn-sm {
+    min-height: 36px;
+    padding: var(--ive-space-2) var(--ive-space-3);
+  }
+}
